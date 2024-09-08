@@ -1,0 +1,1 @@
+console.log(`odd numbers : ${number}`);
