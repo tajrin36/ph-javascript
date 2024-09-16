@@ -20,7 +20,7 @@
         <header>
             <h1>Welcome to DOM</h1>
         </header>
-        <main>
+        <main id="main-container">
             <section>
                 <h1>my DOM set</h1>
                 <ul>
@@ -40,9 +40,9 @@
                     <li>Mango</li>
                 </ul>
             </section>
-            <section>
+            <section id="places-container">
                 <h1>Places I like to visit</h1>
-                <ul>
+                <ul id="places-list">
                     <li>Cox's bazar</li>
                     <li>Syhlet</li>
                     <li>Rangamati</li>
@@ -52,7 +52,9 @@
             </section>
         </main>
         <footer></footer>
+        <script src="js/appand.js"></script>
         <script src="js/dom.js"></script>
+        
         <script>
             // const student = {
             //     name : "tajrin",
@@ -67,24 +69,24 @@
             for (const li of licollection)
             {
                 // console.log(li);
-                console.log(li.innerText);
+                // console.log(li.innerText);
             }
 
             const headcollection = document.getElementsByTagName('h1');
             for (const h1 of headcollection)
             {
                 // console.log(h1);
-                console.log(h1.innerText);
+                // console.log(h1.innerText);
             }
 
             const places = document.getElementsByClassName('fav-friuts');
             for(const place of places){
-                console.log(place.innerText);
+                // console.log(place.innerText);
             }
 
             const someli = document.querySelectorAll('.fruit-container li');
             for(const li of someli){
-                console.log(li);
+                // console.log(li);
             }
         </script>
     </body>
