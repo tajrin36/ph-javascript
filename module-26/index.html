@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>dom-event</title>
+    </head>
+
+    <body>
+        <button onclick="console.log(7)">click me</button>
+        <button onclick="makered()">make red❤️</button>
+        <button id="make-blue">make blue💙</button>
+        <button id="make-pink">make pink🩷</button>
+        <button id="make-green">make green💚</button>
+        <button id="make-orange">make orange🧡</button>
+        <br>
+        <h3 id="default-text">nicher button click korle ami change hoye jabo 😀</h3>
+        <button onclick="handleOnclick()">click me🖐🏻</button>
+        <br>
+        <p id="para-text">default text</p>
+        <input type="text" name="" id="input-field">
+        <button id="update-button">update</button>
+        <br>
+        <h2>add your comments</h2>
+        <div id="comment-container">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam saepe quod quae tempora at et enim rem molestias, quidem quibusdam sapiente provident deleniti suscipit obcaecati mollitia blanditiis veniam? Optio, labore.</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et porro tempore unde accusantium ullam velit facilis voluptas quasi sequi minus mollitia quam, ut dolorum hic maxime itaque. Aperiam, reprehenderit odio.</p>
+            <p id="comments">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus aperiam non, qui commodi corporis iusto, voluptate dolorem consequuntur magnam asperiores dolores, enim incidunt sint doloribus sed consectetur dolore libero similique.</p>
+        </div>
+        <div>
+            <textarea name="" id="textArea-field" cols="60" rows="10"></textarea>
+            <br>
+            <button id="comment-button">post</button>
+        </div>
+        <br>
+
+        <h2>more explore event</h2>
+        <button id="mouse-button">mousemove and mouseenter</button>
+        <br>
+        <br>
+        <input type="text" name="" id="focus-input">
+
+        <h2>deleting info</h2>
+        <p id="secret-text">wrong info</p>
+        <input type="text" name="" id="delete-confirm" placeholder="please type delete">
+        <br>
+        <br>
+        <button id="btn-delete" disabled>delete</button>
+
+        <script src="event.js"></script>
+        <script>
+            function handleOnclick (){
+                const handleStatus = document.getElementById('default-text');
+                handleStatus.innerText = 'yea new text😁';
+            }
+
+            document.getElementById('update-button').addEventListener('click',function(){
+                const inputField = document.getElementById('input-field');
+                const paraText = inputField.value;
+                const p = document.getElementById('para-text');
+                p.innerText = paraText;
+                inputField.value = '';
+            })
+
+            document.getElementById('comment-button').addEventListener('click',function(){
+                const textArea = document.getElementById('textArea-field');
+                const commentText = textArea.value;
+                const commentContainer = document.getElementById('comment-container');
+                //new element added
+                const comment = document.createElement('p');
+                comment.innerText = commentText;
+                // appand the comment
+                commentContainer.appendChild(comment); 
+                textArea.value = '';
+            })
+
+            document.getElementById('mouse-button').addEventListener('mouseenter',function(){
+                console.log("mouseenter triggered");
+            })
+
+            document.getElementById('focus-input').addEventListener('focus',function(){
+                console.log("focus triggered");
+            })
+
+            delete way-1
+            document.getElementById('btn-delete').addEventListener('click',function(){
+                const secret = document.getElementById('secret-text');
+                secret.style.display = 'none';
+            })
+            document.getElementById('delete-confirm').addEventListener('keyup',function(){
+                const text = event.target.value;
+                const deleteButton = document.getElementById('btn-delete');
+                if(text === 'delete'){
+                    deleteButton.removeAttribute('disabled')
+                }
+                else{
+                    deleteButton.setAttribute('disabled',true);
+                }
+            })
+
+        </script>
+    </body>
+
+</html>
