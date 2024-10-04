@@ -1,14 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
+<html lang="en" data-theme="light">
 
-    <!-- script -->
-     <script src="./js/pikachu.js"></script>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pokemon</title>
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css" rel="stylesheet" type="text/css" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            #pokemonSprite {
+                height: 500px;
+                width: 500px;
+            }
+
+            .main-div {
+                padding: 20px;
+
+            }
+        </style>
+    </head>
+
+    <body style="background-color: lightblue;" class="h-screen">
+        <div class="main-div">
+            <input id="pokemonName" type="text" placeholder="Type here" class="input input-bordered input-primary w-full max-w-xs" />
+            <button onclick="fetchData()" class="btn">Search</button>
+        </div>
+        <br>
+        <img src="" alt="pokemon sprite" id="pokemonSprite" style="display: none;">
+
+
+        <!-- script -->
+        <script src="./js/pikachu.js"></script>
+    </body>
+
 </html>
