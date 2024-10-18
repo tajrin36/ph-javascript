@@ -1,17 +1,18 @@
-import { useState } from "react";
+import {useState} from "react";
 
 
 export default function Counter() {
-    const [count, setCount] = useState(10)
+    // const [count, setCount] = useState(10)
+    const [count, setCount] = useState(10);
 
     const handleAdd = () => {
         const newCount = count + 1;
         setCount(newCount);
-    }
+    };
     const handleReduce = () => {
         const reduceCount = count - 1;
         setCount(reduceCount);
-    }
+    };
 
     return (
         <div className="flex items-center justify-center mt-10">
@@ -23,5 +24,5 @@ export default function Counter() {
                 </div>
             </div>
         </div>
-    )
+    );
 }
