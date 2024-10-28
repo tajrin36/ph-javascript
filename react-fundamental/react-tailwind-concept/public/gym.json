@@ -1,0 +1,104 @@
+[
+  {
+      "id": 1,
+      "planName": "Basic",
+      "price": 30,
+      "currency": "USD",
+      "billingCycle": "Monthly",
+      "features": [
+          "Access to gym equipment",
+          "Locker room access",
+          "Free orientation session",
+          "Access during off-peak hours",
+          "Weekly workout tips",
+          "Discount on fitness merchandise",
+          "Free Wi-Fi"
+      ]
+  },
+  {
+      "id": 2,
+      "planName": "Standard",
+      "price": 50,
+      "currency": "USD",
+      "billingCycle": "Monthly",
+      "features": [
+          "24/7 gym access",
+          "Locker room and shower access",
+          "2 personal training sessions per month",
+          "Access to group classes",
+          "Sauna and steam room access",
+          "Access to online workout library",
+          "10% discount on protein shakes",
+          "Monthly fitness assessment"
+      ]
+  },
+  {
+      "id": 3,
+      "planName": "Premium",
+      "price": 80,
+      "currency": "USD",
+      "billingCycle": "Monthly",
+      "features": [
+          "All Standard plan benefits",
+          "4 personal training sessions per month",
+          "Nutritional guidance",
+          "Access to premium group classes",
+          "Unlimited guest passes",
+          "Access to advanced workout equipment",
+          "Dedicated locker",
+          "Access to specialized workshops (e.g., yoga, pilates)",
+          "Priority equipment reservations"
+      ]
+  },
+  {
+      "id": 4,
+      "planName": "Elite",
+      "price": 120,
+      "currency": "USD",
+      "billingCycle": "Monthly",
+      "features": [
+          "All Premium plan benefits",
+          "Dedicated personal trainer",
+          "Customized workout and diet plan",
+          "Weekly progress check-ins",
+          "Exclusive lounge access",
+          "Priority booking for classes",
+          "Monthly body composition analysis",
+          "Access to member-only events and seminars",
+          "Complimentary wellness kits",
+          "Free fitness apparel"
+      ]
+  },
+  {
+      "id": 5,
+      "planName": "Family",
+      "price": 200,
+      "currency": "USD",
+      "billingCycle": "Monthly",
+      "features": [
+          "All Standard plan benefits for 4 family members",
+          "Family group training sessions",
+          "Childcare services during workouts",
+          "Family-friendly classes",
+          "Discount on family fitness events",
+          "Access to family lounge area",
+          "Monthly family fitness challenge"
+      ]
+  },
+  {
+      "id": 6,
+      "planName": "Student",
+      "price": 25,
+      "currency": "USD",
+      "billingCycle": "Monthly",
+      "features": [
+          "All Basic plan benefits",
+          "Discounted personal training sessions",
+          "Access to student-only group classes",
+          "Free fitness workshops",
+          "Priority access to study spaces",
+          "Student wellness events",
+          "Networking opportunities with fitness professionals"
+      ]
+  }
+]
