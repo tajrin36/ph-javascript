@@ -1,8 +1,9 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, sendEmailVerification, updateProfile } from "firebase/auth";
 import { auth } from "../firebase.init";
 import { useState } from "react";
 import { IoEyeSharp } from "react-icons/io5";
 import { FaEyeSlash } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
 
@@ -17,12 +18,14 @@ const SignUp = () => {
         const email = event.target.email.value;
         const password = event.target.password.value;
         const terms = event.target.terms.checked;
-        console.log(email, password,terms);
+        const name = event.target.name.value;
+        const photo = event.target.photo.value;
+        console.log(email, password, terms);
 
         setErrorMessage('');
         setSuccess(false);
 
-        if(!terms){
+        if (!terms) {
             setErrorMessage('please accept our terms and conditions');
             return;
         }
@@ -43,7 +46,25 @@ const SignUp = () => {
                 // Signed up 
                 console.log(result.user);
                 setSuccess(true);
-                // ...
+
+                //send verification email address
+                sendEmailVerification(auth.currentUser)
+                    .then(() => {
+                        console.log('Email verification sent!');
+                        
+                    });
+
+                    //update user profile name and photo url
+                    const profile = {
+                        displayName:name,
+                        photoURL:photo,
+                    }
+                    updateProfile(auth.currentUser,profile)
+                    .then(()=>  {
+                        console.log('User profile updated!')
+                    }) .catch((error) =>  {
+                        console.log('ERROR',error.message);
+                    })
             })
             .catch((error) => {
                 console.log('ERROR', error);
@@ -56,6 +77,18 @@ const SignUp = () => {
         <div className="flex items-center justify-center mt-4 ">
             <div className="card bg-base-100 w-full max-w-sm shrink-0 border ">
                 <form onSubmit={handleSignUp} className="card-body bg-[#fff8f9] rounded-lg">
+                <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Name</span>
+                        </label>
+                        <input type="text" name="name" placeholder="name" className="input input-bordered" required autoComplete="off" />
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Photo URL</span>
+                        </label>
+                        <input type="text" name="photo" placeholder="photo URL" className="input input-bordered" required autoComplete="off" />
+                    </div>
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Email</span>
@@ -99,6 +132,7 @@ const SignUp = () => {
                 {
                     success && <p className="text-green-600 text-center">successfully sign up!</p>
                 }
+                <p className="text-black text-lg p-4 text-center font-semibold">Already have an account? Please <Link to='/login'><span className="text-blue-500">LogIn</span></Link></p>
             </div>
         </div>
     );
